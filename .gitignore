@@ -1,2 +1,9 @@
+# Ignore node.js modules
+
 *node_modules*
+
+# Ignore local config files if there were any
 *env*
+
+# Ignore compiled binaries
+target/
