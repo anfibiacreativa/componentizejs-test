@@ -230,5 +230,59 @@ After running this command, you should see the following output:
 Hello ComponentizeJS
 ```
 
+## Transpiling and running it in the Node.js
+
+Now we're going to transpile our Wasm module to JavaScript and run it in Node.js. First of all, we need to install additional dependencies:
+
+```bash
+npm install --save @bytecodealliance/jco @bytecodealliance/preview2-shim
+```
+
+We will also update our `package.json` file to add the following lines:
+
+```json
+"scripts": {
+    "transpile": "jco transpile hello.component.wasm -o hello --map 'wasi-*=@bytecodealliance/preview2-shim/*'",
+    ...
+}
+```
+
+Now we can go back to the terminal and run the following command:
+
+```bash
+npm run transpile
+```
+
+We should see the following output:
+  
+```bash
+Transpiled JS Component Files:
+
+ - hello/hello.component.core.wasm     6.44 MiB
+ - hello/hello.component.core2.wasm    30.1 KiB
+ - hello/hello.component.d.ts          0.58 KiB
+ - hello/hello.component.js            44.2 KiB
+ - hello/imports/environment.d.ts      0.09 KiB
+ - hello/imports/exit.d.ts             0.16 KiB
+ - hello/imports/filesystem.d.ts       3.85 KiB
+ - hello/imports/monotonic-clock.d.ts  0.14 KiB
+ - hello/imports/preopens.d.ts         0.47 KiB
+ - hello/imports/random.d.ts            0.1 KiB
+ - hello/imports/streams.d.ts          0.58 KiB
+ - hello/imports/wall-clock.d.ts
+```
+Thos have been saved to a new folder in your project called `hello`. 
+
+Now you can use the REPL to run the following command:
+
+```bash
+node -e "import('./hello/hello.component.js').then(m => console.log(m.hello('ComponentizeJS')))"
+```
+
+You should see the following output:
+
+```bash
+Hello ComponentizeJS
+```
 
 
