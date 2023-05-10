@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "transpile": "jco transpile hello.component.wasm -o hello --map 'wasi-*=@bytecodealliance/preview2-shim/*'",
+    "transpile": "jco transpile hello.component.wasm -o hello --wasi-shim",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
