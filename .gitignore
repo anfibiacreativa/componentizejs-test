@@ -7,3 +7,4 @@
 
 # Ignore compiled binaries
 target/
+hello/
