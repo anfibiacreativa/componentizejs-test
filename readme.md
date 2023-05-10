@@ -242,7 +242,7 @@ We will also update our `package.json` file to add the following lines:
 
 ```json
 "scripts": {
-    "transpile": "jco transpile hello.component.wasm -o hello --map 'wasi-*=@bytecodealliance/preview2-shim/*'",
+    "transpile": "jco transpile hello.component.wasm -o hello --wasi-shim",
     ...
 }
 ```
