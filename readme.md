@@ -272,7 +272,7 @@ Transpiled JS Component Files:
  - hello/imports/streams.d.ts          0.58 KiB
  - hello/imports/wall-clock.d.ts
 ```
-Thos have been saved to a new folder in your project called `hello`. 
+Those have been saved to a new folder in your project called `hello`. 
 
 Now you can use the REPL to run the following command:
 
