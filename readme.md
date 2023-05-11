@@ -35,7 +35,7 @@ Now we will install the `componentize-js` package:
 npm install --save-dev @bytecodealliance/componentize-js
 ```
 
-and we're going to create a new file called `componentize.mjs` that will be used to generate our Wasm module. Copy and past the following code to it.
+and we're going to create a new file called `componentize.mjs` that will be used to generate our Wasm module. Copy and paste the following code to it.
 
 ```js
 import { componentize } from '@bytecodealliance/componentize-js';
@@ -51,7 +51,7 @@ await writeFile('hello.component.wasm', component);
 
 ### Create the WIT and JS files
 
-Noe we're going to create a WIT file called `hello.wit`. WIT stands for WebAssembly Interface Types and it's a file that describes the interface of a WebAssembly module. Copy and paste the following code to it.
+Now we're going to create a WIT file called `hello.wit`. WIT stands for WebAssembly Interface Types and it's a file that describes the interface of a WebAssembly module. Copy and paste the following code to it.
 
 ```wasm
 default world hello {
@@ -246,6 +246,7 @@ We will also update our `package.json` file to add the following lines:
     ...
 }
 ```
+Note I did not install the jco CLI globally, but locally. What this line does is execute jsco to transpile the .wasm component using Typescript interfaces, and generate the moules in a new folder called `hello`. For that, it uses the flag `--wasi-shim` to resolve the imports.
 
 Now we can go back to the terminal and run the following command:
 
