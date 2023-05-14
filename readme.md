@@ -221,7 +221,7 @@ cargo build --release
 Now we're ready to run it.
 
 ```bash
-cargo ./target/release/componentizejs
+cargo run ./target/release/componentizejs
 ```
 
 After running this command, you should see the following output:
